@@ -1,60 +1,50 @@
-# Face Mask Detection using CNN  
+# Deep Learning Projects  
 
-*A deep learning project to classify images as "With Mask" or "Without Mask" using a Convolutional Neural Network (CNN).*  
-
----
-
-## Introduction  
-The COVID-19 pandemic highlighted the importance of mask compliance in public spaces.  
-This project implements a **Convolutional Neural Network (CNN)** to automatically detect whether a person in an image is wearing a mask or not.  
+*A collection of deep learning projects using TensorFlow and Keras for computer vision and medical diagnostics.*  
 
 ---
 
-## Dataset  
-- **Source**: [Kaggle – Face Mask Dataset](https://www.kaggle.com/datasets/omkargurav/face-mask-dataset)  
-- **Classes**:  
-  - `With Mask` → labeled as 1  
-  - `Without Mask` → labeled as 0  
-- **Size**: Thousands of annotated face images in both categories.  
+
+### 1. Face Mask Detection using CNN  
+A Convolutional Neural Network (CNN) trained to classify whether a person is wearing a face mask or not.  
+
+- **Dataset**: [Kaggle – Face Mask Dataset](https://www.kaggle.com/datasets/omkargurav/face-mask-dataset)  
+- **Classes**: With Mask / Without Mask  
+- **Methodology**:  
+  - Images resized to **128×128** and normalized.  
+  - CNN with Conv2D, MaxPooling, Dropout layers.  
+  - Optimizer: Adam, Loss: Sparse Categorical Crossentropy.  
+- **Results**:  
+  - **Test Accuracy**: ~94%  
+  - High precision & recall for both classes.  
+- **Applications**: Public health monitoring and compliance checking.  
 
 ---
 
-## Methodology  
+### 2. Breast Cancer Classification (Benign vs Malignant)  
+A deep learning model to classify breast cancer tumors as benign or malignant using numerical clinical features.  
 
-### Data Preprocessing  
-- Resized all images to **128×128 pixels**.  
-- Normalized pixel values to [0,1].  
-- Split dataset into **train / validation / test sets**.  
-
-### CNN Architecture  
-- **Conv2D + MaxPooling layers** for feature extraction.  
-- **Dropout layers** to reduce overfitting.  
-- **Dense output layer** with softmax activation (2 classes).  
-- Optimizer: **Adam**  
-- Loss: **Sparse Categorical Crossentropy**  
-
-### Training  
-- Epochs: 5 (configurable).  
-- Validation split: 10%.  
+- **Dataset**: [Breast Cancer Wisconsin Dataset (UCI)](https://archive.ics.uci.edu/ml/datasets/breast+cancer+wisconsin+(diagnostic)) (via scikit-learn).  
+- **Features**: 30 attributes from cell nucleus measurements.  
+- **Methodology**:  
+  - Preprocessing with standard scaling.  
+  - Dense neural network with hidden layers and ReLU activations.  
+  - Evaluation with confusion matrix, classification report, and ROC curve.  
+- **Results**:  
+  - **Accuracy**: ~97%  
+  - Strong precision and recall, especially for malignant detection.  
+- **Applications**: Early cancer detection support (research purpose only).  
 
 ---
 
-## Results  
+🛠️ Tech Stack
 
-- **Test Accuracy**: ~ **94%**  
-- **Classification Report**:  
-  - *With Mask*: High precision & recall (>93%).  
-  - *Without Mask*: High precision & recall (>94%).  
-- Visualization: Plotted **training/validation accuracy** and **loss curves**.  
-- Example prediction function created (`predict_mask`) to classify any input image with a confidence score.  
+Frameworks: TensorFlow, Keras, Scikit-learn
 
----
+Techniques: CNNs, Dense Neural Networks
 
-## Conclusion  
+Tools: Kaggle Datasets, Matplotlib, Seaborn
 
-- The CNN achieved **robust performance (~94% accuracy)** in distinguishing between masked and unmasked faces.  
-- Demonstrated how deep learning can support public health monitoring.  
-- Future work:  
-  - Increase dataset diversity (lighting, occlusions).  
-  - Deploy model for **real-time detection** on edge devices.  
+📌 Disclaimer
 
+These projects are developed for educational and research purposes only and are not intended for clinical or medical decision-making.
